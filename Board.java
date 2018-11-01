@@ -8,13 +8,14 @@ public class Board{
 	public static final int EMPTY = 0;
 	private int whoPlayed;
 	private int [][] gameBoard;
-	//private Move move;
+	private Move move;
 	
 	//default constructor, initializing board with empty values.
 	public Board() {
 		gameBoard = new int[8][8];
 		//gia na orisw an o minimax paizei prwtos i oxi tha allazw sto initial
 		//state "poios" epaikse k autho tha ekxwreitai ston algorithmo minimax
+		move = new Move();
 		whoPlayed = W;
 		for(int i=0; i<8; i++) {
 			for(int j=0; j<8; j++) {
@@ -32,8 +33,14 @@ public class Board{
 	//that was made by the one whoPlayed.
 	public Board(Board board) {
 		whoPlayed = board.whoPlayed;
-		
-		
+		move = board.move;
+		//new instance
+		gameBoard=new int[8][8];
+		for(int i=0; i<8; i++) {
+			for(int j=0; j<8; j++) {
+				gameBoard[i][j] = board.gameBoard[i][j];	
+			}
+		}
 		
 	}
 	
@@ -66,9 +73,15 @@ public class Board{
 		return whoPlayed;
 	}
 	
+	public Move getMove() {
+		return move;
+	}
 	
-	
-	
+	public void setMove(Move move) {
+		this.move.setRow(move.getRow());
+		this.move.setCol(move.getCol());
+		this.move.setVal(move.getVal());
+	}
 	
 	
 	
