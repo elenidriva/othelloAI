@@ -8,7 +8,7 @@ public class Board{
 	public static final int EMPTY = 0;
 	private int whoPlayed;
 	private int [][] gameBoard;
-	//private Move move;
+	//private Move move;!
 	
 	//default constructor, initializing board with empty values.
 	public Board() {
