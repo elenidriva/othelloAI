@@ -42,22 +42,7 @@ public class Board{
 			this.col = col;
 		}
 	}
-
-	private static final Point[] topLeft = new Point[]{
-			new Point(1, 0),
-			new Point(1, 1),
-			new Point(0, 1),
-
-	};
-	
-	public Point[] cornerList = new Point[]{
-			new Point(0, 0),
-			new Point(0, 7),
-			new Point(7, 0),
-			new Point(7, 7),
-	};
-	
-	  
+  
 	private static final Point[] possibleDirections = new Point[]{
 			new Point(1, 0),
 			new Point(1, 1),
@@ -219,8 +204,6 @@ public class Board{
 			// TODO Auto-generated method stub
 			return false;
 		}
-
-
 	}
 
 	private boolean isValidPosition(int x, int y){
@@ -261,8 +244,6 @@ public class Board{
 		}
 	}
 
-
-	
 	public Board(){
 		this.board = new Piece[8][8];
 		this.currentPlayerPiece = Piece.BLACK;
@@ -275,6 +256,7 @@ public class Board{
 		this.board[3][4] = Piece.BLACK;
 		this.board[4][3] = Piece.BLACK;
 		this.board[4][4] = Piece.WHITE;
+		// Test input for mobility, stability, discDif functions.
 		this.board[0][0] = Piece.BLACK;
 		this.board[0][1] = Piece.BLACK;
 		this.board[0][2] = Piece.BLACK;
@@ -362,8 +344,6 @@ public class Board{
 			return null;
 		}
 	}
-
-	
 	public void printBoard(){
 		System.out.println("***********************************\n");
 		System.out.println("|   || 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | ");
@@ -382,13 +362,7 @@ public class Board{
 		}
 	}/* /printBoard() */
 
-
-	////////////////////////////////////////////////////////////////////
-
-	/*
-	 * Calculates the number of potential moves for each player
-	 * 
-	 * */
+	// Mobility function: Counts eligible moves for currentPlayer (otherPiece too)
 	int mobility(Piece currentPlayerPiece ){
 		int mobilityCurr = 0;
 		for( int row=0; row<7;row++){
@@ -402,26 +376,6 @@ public class Board{
 		return mobilityCurr;
 	}
 
-	
-/*	private int numberOfPotentialMoves(int row, int col) {
-		int mobilityB = 0;
-		Piece otherPiece = ( currentPlayerPiece == Piece.BLACK ) ? Piece.WHITE : Piece.BLACK;
-		Point start = new Point(row, col);
-		for (Point step : possibleDirections) {
-			// handler is stateful so create new for each direction
-			CheckCellHandler checkCellHandler = new CheckCellHandler(otherPiece);
-			iterateCells(start, step, checkCellHandler);
-			if (checkCellHandler.isGoodMove())
-				mobilityB++;
-		}
-		return mobilityB;
-	}
-*/
-	/*
-	 * 
-	 */
-	////////////////////////////////////////////////////////////////////
-
 	public void copyBoard(Board b) {
 		Piece [][] newB = b.getBoard();
 		for (int row = 0; row < 7; row++) {
@@ -434,17 +388,14 @@ public class Board{
 			
 		//}
 	}
-	
-	  
+
 	  public int discDif() {
 		  //System.out.print("\nBlack disks " + this.numberOfBlackDisks);
-		 // System.out.print("\nWhite disks " + this.numberOfWhiteDisks);
+		  // System.out.print("\nWhite disks " + this.numberOfWhiteDisks);
 		  //System.out.print(this.numberOfBlackDisks - this.numberOfWhiteDisks);
 		  return this.numberOfBlackDisks -  this.numberOfWhiteDisks;
 	  }
-	  
-	  
-	  
+	  //Stability function: Checks whether corner and edges cells are stable.
 	  public int stability(Piece currentPlayerPiece ){
 		  int currStab = 0;
 		  int col1 = 1; int row1 = 1;  int col2 = 1; int row2 = 1;
@@ -530,16 +481,6 @@ public class Board{
 			 System.out.println("\ndisc Diff medthod:  "+ discDif());
 			 return 10* mobility(currentPlayerPiece);
 		 }
-		// int  discdiff = discDifference();
-		// int corners = corners();
-		// int evaluate = 4*discdiff + 10*corners;
-		//  return evaluate;
-		 // System.out.print("Score from discDifference + corners");
-		 // System.out.print(discDifference()+ corners());
-		  
 	  }
 
-	
-	
-	
 }

@@ -1,4 +1,3 @@
-// thelei allagi sti main, na exei if gia to poios paizei. thelei false case gia to maximize-MINIMIZE (mallon thewreitai zitoumeno tis ergasias)- weights - stability fix	
 package Othello;
 
 import java.util.*;
@@ -8,7 +7,6 @@ import Othello.MinimaxAlphaBeta;
 import Othello.Board.Point;
 
 public class Main {
-
   public static void main(String[] args) {
       Scanner scan = new Scanner(System.in);
       Board board = new Board();
@@ -24,8 +22,7 @@ public class Main {
     	 		System.out.println(board.getCurrentPlayerPiece() + " player is playing \n");
       	}
       	*/
-       // int player = scan.nextInt();
-        
+       // int player = scan.nextInt();  
         System.out.println("\n");
         System.out.println(board.getCurrentPlayerPiece() + " player is playing \n");
         board.evaluate();
@@ -35,14 +32,11 @@ public class Main {
         System.out.println("Column : ");
         int col = scan.nextInt();
         board.placePiece(row - 1,col - 1 ); 
-        
-        board.printBoard();
-       
+        board.printBoard(); 
         if (board.finished() == true) {
         	System.out.println("THE WINNER IS : " + board.winner());
         	gameContinues = false;
         }
-        
         if ( board.getCurrentPlayerPiece() == "White") {
           System.out.println(board.getCurrentPlayerPiece() + " player is playing \n");
           System.out.println("Where do you want to place the next piece? ");
