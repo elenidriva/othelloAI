@@ -1,8 +1,11 @@
 package Othello;
 import java.util.*;
 
+// Mobility works properly.
+// New function for stability - works properly
+// TODO Fix Main method to run smoothly for AI and RL Player
+
 // TODO add evaluate() method inside Board.java
-// TODO check if evaluation functions work, namely stability(), mobility()
 
 public class Board{
 
