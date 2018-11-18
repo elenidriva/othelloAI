@@ -1,10 +1,11 @@
 package Othello;
 import java.util.*;
 
-// Mobility works properly.
-// New function for stability - works properly
-// TODO Fix Main method to run smoothly for AI and RL Player
-
+// Added .txt with input cases for testing purposes.
+//++ coding and app aesthetics	
+// Fixed main - working. Also, no longer pops illegal piece placement on AI moves.
+// TODO Check Minimax?
+// TODO DEPTH?
 // TODO add evaluate() method inside Board.java
 
 public class Board{
@@ -251,23 +252,13 @@ public class Board{
 		this.numberOfBlackDisks = 2;
 		this.numberOfWhiteDisks = 2;
 		
+	    this.board[3][3] = Piece.WHITE;
+	    this.board[3][4] = Piece.BLACK;
+	    this.board[4][3] = Piece.BLACK;
+	    this.board[4][4] = Piece.WHITE;
 		//  fillArray(this.board);
-		this.board[3][3] = Piece.WHITE;
-		this.board[3][4] = Piece.BLACK;
-		this.board[4][3] = Piece.BLACK;
-		this.board[4][4] = Piece.WHITE;
-		// Test input for mobility, stability, discDif functions.
-		this.board[0][0] = Piece.BLACK;
-		this.board[0][1] = Piece.BLACK;
-		this.board[0][2] = Piece.BLACK;
-		this.board[0][7] = Piece.BLACK;
-		this.board[0][4] = Piece.BLACK;
-		this.board[0][6] = Piece.BLACK;
-		this.board[7][0] = Piece.BLACK;
-		this.board[7][7] = Piece.BLACK;
-		this.board[6][7] = Piece.BLACK;
-		this.board[7][6] = Piece.BLACK;
-		this.board[7][5] = Piece.BLACK;
+
+		// Have created .txt input cases for testing reasons.
 
 	}
 
@@ -289,7 +280,7 @@ public class Board{
 			updateNumberOfDisks();
 			return true;
 		} else {
-			System.out.println("Illegal piece placement \n");
+			//System.out.println("Illegal piece placement \n");
 			return false;
 		}
 	}
@@ -310,13 +301,15 @@ public class Board{
 		}
 	}
 
-	public boolean finished(){
-		if(this.counter > 63 /* || legalMovesCounter == 0 */){
-			return true;
-		}else{
-			return false;
+	public int finished(){
+		if(this.counter > 63) return -1;
+		if(mobility(this.currentPlayerPiece)==0) {	
+			return 0;
+		}else {
+			return 1;
 		}
 	}
+
 
 	private void updateNumberOfDisks(){
 		int white = 0;
@@ -336,6 +329,7 @@ public class Board{
 	}
 
 	public String winner(){
+		updateNumberOfDisks();
 		if(this.numberOfBlackDisks > this.numberOfWhiteDisks){
 			return "BLACK";
 		}else if (this.numberOfBlackDisks < this.numberOfWhiteDisks){
@@ -345,7 +339,7 @@ public class Board{
 		}
 	}
 	public void printBoard(){
-		System.out.println("***********************************\n");
+		System.out.println("**************************************");
 		System.out.println("|   || 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | ");
 		for (int row = 0; row <= 7; row++){
 			System.out.print("| " + (row + 1) + " |");
@@ -462,11 +456,10 @@ public class Board{
 	public int evaluate(){
 		  
 		 if(this.counter <=20) {
-			System.out.println("mob: " +mobility(currentPlayerPiece));                      //- mobility(otherPiece));
-			System.out.println("stab: " +stability(currentPlayerPiece));                      //- stability(otherPiece));
-			
-			 System.out.println("\ndisc Diff medthod:  "+ discDif()+"\n");
-			 System.out.println("\nEvaluate:  ");
+			//System.out.println("mob: " +mobility(currentPlayerPiece));                     // - mobility(otherPiece));
+			//System.out.println("stab: " +stability(currentPlayerPiece));                      //- stability(otherPiece));
+			// System.out.println("\ndisc Diff medthod:  "+ discDif()+"\n");
+			// System.out.println("\nEvaluate:  ");
 			 return 10* mobility(currentPlayerPiece) + 10*stability(currentPlayerPiece)+ 10* discDif();
 		 }else if(this.counter <= 58) {
 			 System.out.println("\nmobility is "+ mobility(currentPlayerPiece));
