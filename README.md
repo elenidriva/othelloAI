@@ -1,7 +1,7 @@
-#OthelloAI
+# OthelloAI
 OthelloAI is a Human VS AI board game that allows the user to play against the AI on different difficulty levels.
 
-![readme_photo](C:\Users\user\Documents\GitHub\othelloAI\initial.png)
+![readme_photo](https://i.ibb.co/61rCxNL/initial.png)
 
 ## Table of Contents
 * [General info](#general-info)
@@ -66,11 +66,11 @@ To run this project, you just need to simply download it.
 Via command line:
 ```
 $ cd  ../where_you_want_it_to_be_saved
-$ git clone https://github.com/elenidriva/Todo-Web-Application-using-Spring-MVC.git
+$ git clone https://github.com/elenidriva/othelloAI.git
 ```
 Or download manually.
 
  Import it in a programming environment or (i.e. Eclipse IDE for Enterprise Java Developers) or execute via command line.
 
- ### License
- The application is under the MIT license.
+## License
+The application is under the MIT license.
