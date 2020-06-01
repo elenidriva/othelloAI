@@ -1,8 +1,8 @@
 # OthelloAI
 OthelloAI is a Human VS AI board game that allows the user to play against the AI on different difficulty levels.
 
-![readme_photo](https://i.ibb.co/61rCxNL/initial.png)
-
+![readme_photo1](https://i.ibb.co/61rCxNL/initial.png)
+![readme_photo2](https://i.ibb.co/ggmfjwB/2.png)
 ## Table of Contents
 * [General info](#general-info)
 * [Key features](#key-features)
