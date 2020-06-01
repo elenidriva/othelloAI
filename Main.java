@@ -56,7 +56,7 @@ public class Main {
 				int row = scan.nextInt();
 				System.out.println("Column : ");
 				int col = scan.nextInt();
-				board.placePieceForPlayer(row - 1,col - 1 ); // Για να λογικευτούν οι μεταβλητές
+				board.placePieceForPlayer(row - 1,col - 1 ); // Για να λογικευτο�?ν οι μεταβλητές
 				board.printBoard();
 
 			}else if ( board.getCurrentPlayerPiece() == "White") {

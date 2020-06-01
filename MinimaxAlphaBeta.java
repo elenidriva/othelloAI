@@ -28,7 +28,7 @@ public class MinimaxAlphaBeta {
 			int value = -1000000;
 			Board [] children = new Board[this.board.mobility()];
 			int c = 0;
-			/// Μάλλον δεν χρειαζομαι τα fors επειδη έχω τους τρομερούς χαντλερς
+			/// Μάλλον δεν χ�?ειαζομαι τα fors επειδη έχω τους τ�?ομε�?ο�?ς χαντλε�?ς
 			for (int row = 0; row < 7; row++) { 
 				for (int col = 0; col < 7; col++) {
 					if (board.getBoard()[row][col] == null) {

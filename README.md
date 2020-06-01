@@ -1,15 +1,13 @@
 #OthelloAI
 OthelloAI is a Human VS AI board game that allows the user to play against the AI on different difficulty levels.
 
-
+![readme_photo](C:\Users\user\Documents\GitHub\othelloAI\initial.png)
 
 ## Table of Contents
 * [General info](#general-info)
 * [Key features](#key-features)
 * [Technologies & Tools](#technologies--tools)
-* [Setup](#setup)
-* [Run](#run)
-* [Future improvements & To dos](#future-improvements--to-dos)
+* [Setup & Run](#setup--run)
 * [License](#license)
 
 ## General info
@@ -18,11 +16,13 @@ The AI evaluates the best move to make depending on the stage of the game by uti
 the heuristics implemented.
 
 ## Key features
-* Alpha-Beta pruning
+### Alpha-Beta pruning
 Alpha–beta pruning is a search algorithm that seeks to decrease the number of nodes that are evaluated by the minimax algorithm in its search tree.
 It stops evaluating a move when at least one possibility has been found that proves the move to be worse than a previously examined move.
+
 ### Game stages
 The game is divided into 3 stages, early-game, mid-game, late-game. Depending on which stage of the game we are, different weight is applied to each heuristic method.
+
 ### Heuristic methods
 * **corners()**
 
@@ -56,3 +56,21 @@ Finds the difference between black and white pieces.
 It gives some weight to each cell, in order to avoid the possibility of giving an important cell to the enemy.
 
 *The method has mediocre weight during the early-game, a bit less during mid-game, yet no significance during late-game.*
+
+## Technologies & Tools
+* Java 13
+* Eclipse IDE for Java Developers
+
+## Setup & Run
+To run this project, you just need to simply download it.
+Via command line:
+```
+$ cd  ../where_you_want_it_to_be_saved
+$ git clone https://github.com/elenidriva/Todo-Web-Application-using-Spring-MVC.git
+```
+Or download manually.
+
+ Import it in a programming environment or (i.e. Eclipse IDE for Enterprise Java Developers) or execute via command line.
+
+ ### License
+ The application is under the MIT license.

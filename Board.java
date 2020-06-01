@@ -7,7 +7,7 @@ import java.util.*;
 public class Board{
 
 	public static enum Piece{
-		BLACK, // ίσως τα αλλάξω σε '1' ή '-1' λόγω ui
+		BLACK, 
 		WHITE;
 	}
 
@@ -36,16 +36,16 @@ public class Board{
 		}
 	}
 
-	/*Όλες οι κατευθύνσεις αντιπροσωπευμένες από έναν πίνακα*/
+
 	private static final Point[] possibleDirections = new Point[]{
-			new Point(1, 0), // κάτω
-			new Point(1, 1), // κάτω & δεξιά
-			new Point(0, 1), // δεξιά
-			new Point(-1, 1), // δεξιά & πάνω
-			new Point(-1, 0), // πάνω
-			new Point(-1, -1), // πάνω & αριστερά
-			new Point(0, -1), // αριστερά
-			new Point(1, -1), //κάτω & αριστερά
+			new Point(1, 0), 
+			new Point(1, 1), 
+			new Point(0, 1), 
+			new Point(-1, 1), 
+			new Point(-1, 0), 
+			new Point(-1, -1),
+			new Point(0, -1), 
+			new Point(1, -1), 
 	};
 
 	interface CellHandler {
@@ -167,14 +167,14 @@ public class Board{
 	}
 
 
-	/*Αρχικοποίηση του πινακα*/
+
 	public Board(){
 		this.board = new Piece[8][8];
 		this.currentPlayerPiece = Piece.BLACK;
 		this.counter = 4;
 		this.numberOfBlackDisks = 2;
 		this.numberOfWhiteDisks = 2;
-		// Αρχικές θέσεις
+		// Α�?χικές θέσεις
 		this.board[3][3] = Piece.WHITE;
 		this.board[3][4] = Piece.BLACK;
 		this.board[4][3] = Piece.BLACK;
@@ -277,7 +277,7 @@ public class Board{
 		}
 	}
 
-	/*Εκτυπώνει τον πίνακα στο cmd*/
+
 	public void printBoard(){
 		System.out.println("**************************************");
 		System.out.println("|   || 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | ");
